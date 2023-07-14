@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main{
+public class Calculadora{
 
     static Scanner teclado = new Scanner(System.in);
 

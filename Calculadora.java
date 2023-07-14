@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Calculadora{
+public class Calculadora {
 
     static Scanner teclado = new Scanner(System.in);
 
@@ -10,7 +10,7 @@ public class Calculadora{
     menu();
     
     }
-    public static void menu(){
+    public static void menu() throws IOException, InterruptedException{
         int opt;
         do{
             System.out.println("----\tCALCULADORA\t----");

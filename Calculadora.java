@@ -7,8 +7,11 @@ public class Main{
 
     public static void main(String []args) throws IOException, InterruptedException {
 
+    menu();
+    
+    }
+    public static void menu(){
         int opt;
-
         do{
             System.out.println("----\tCALCULADORA\t----");
             System.out.println("1 - soma");
@@ -51,13 +54,10 @@ public class Main{
                 opt=0;
             }
 
-
-
         }while(opt!=0);
-
-
-
     }
+
+
     public static int[] teclado(){
         int num[] = new int[2];
 

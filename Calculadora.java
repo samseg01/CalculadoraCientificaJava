@@ -18,6 +18,9 @@ public class Calculadora {
             System.out.println("2 - subtração");
             System.out.println("3 - multiplicação");
             System.out.println("4 - divisão");
+            System.out.println("5 - seno");
+            System.out.println("6 - cosseno");
+            System.out.println("7 - tangente");
             System.out.println("0 - sair\n");
 
             opt=teclado.nextInt();
@@ -35,8 +38,17 @@ public class Calculadora {
                 case 4:
                     System.out.println(divis());
                     break;
-
+                case 5:
+                    System.out.println("o seno é " + sen());
+                    break;
+                case 6:
+                    System.out.println("o cosseno é " + cos());
+                    break;
+                case 7:
+                    System.out.println("a tangente é " + tan());
+                    break;
             }
+
             int e;
             do{
                 System.out.println("Continuar? SIM(1) - NÃO(0)");
@@ -58,52 +70,87 @@ public class Calculadora {
     }
 
 
-    public static int[] teclado(){
-        int num[] = new int[2];
+    public static double[] teclado(int i){
+            double num[] = new double[i];
+        if(i==2) {
 
-        System.out.print("Digite o primeiro número: ");
-        num[0]=teclado.nextInt();
+            System.out.print("Digite o primeiro número: ");
+            num[0]=teclado.nextInt();
 
-        System.out.print("Digite o segundo número: ");
-        num[1] = teclado.nextInt();
+            System.out.print("Digite o segundo número: ");
+            num[1] = teclado.nextInt();
 
+        }else if (i==1) {
+            num[0]=teclado.nextInt();
+        }
         return num;
     }
 
-    public static int soma(){
-        int num[] = teclado();
+    public static double soma(){
+        double num[] = teclado(2);
 
-        int a = num[0];
-        int b = num[1];
+        double a = num[0];
+        double b = num[1];
 
         return a+b;
     }
 
-    public static int subtração(){
-        int num[] = teclado();
+    public static double subtração(){
+        double num[] = teclado(2);
 
-        int a = num[0];
-        int b = num[1];
+        double a = num[0];
+        double b = num[1];
 
         return a-b;
     }
 
-    public static int multipli(){
-        int num[] = teclado();
+    public static double multipli(){
+        double num[] = teclado(2);
 
-        int a = num[0];
-        int b = num[1];
+        double a = num[0];
+        double b = num[1];
 
         return a*b;
     }
 
-    public static int divis(){
-        int num[] = teclado();
+    public static double divis(){
+        double num[] = teclado(2);
 
-        int a = num[0];
-        int b = num[1];
+        double a = num[0];
+        double b = num[1];
 
         return a/b;
     }
+
+    public static double sen(){
+        System.out.print("Escreva o numero em graus: ");
+        double num[] = teclado(1);
+
+        double a = num[0];
+        double rad = Math.toRadians(a);
+
+        return Math.sin(rad);
+    }
+
+    public static double cos(){
+        System.out.print("Escreva o numero em graus: ");
+        double num[] = teclado(1);
+
+        double a = num[0];
+        double rad = Math.toRadians(a);
+
+        return Math.cos(rad);
+    }
+
+    public static double tan(){
+        System.out.print("Escreva o numero em graus: ");
+        double num[] = teclado(1);
+
+        double a = num[0];
+        double rad = Math.toRadians(a);
+
+        return Math.tan(rad);
+    }
+
 
 }

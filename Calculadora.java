@@ -1,1 +1,109 @@
-class
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main{
+
+    static Scanner teclado = new Scanner(System.in);
+
+    public static void main(String []args) throws IOException, InterruptedException {
+
+        int opt;
+
+        do{
+            System.out.println("----\tCALCULADORA\t----");
+            System.out.println("1 - soma");
+            System.out.println("2 - subtração");
+            System.out.println("3 - multiplicação");
+            System.out.println("4 - divisão");
+            System.out.println("0 - sair\n");
+
+            opt=teclado.nextInt();
+
+            switch(opt){
+                case 1:
+                    System.out.println(soma());
+                    break;
+                case 2:
+                    System.out.println(subtração());
+                    break;
+                case 3:
+                    System.out.println(multipli());
+                    break;
+                case 4:
+                    System.out.println(divis());
+                    break;
+
+            }
+            int e;
+            do{
+                System.out.println("Continuar? SIM(1) - NÃO(0)");
+                e = teclado.nextInt();
+            }while(e!=0 && e!=1);
+
+
+            if(e==1){
+                if (System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                }else{
+                    Runtime.getRuntime().exec("clear");
+                }
+            }else if(e==0){
+                opt=0;
+            }
+
+
+
+        }while(opt!=0);
+
+
+
+    }
+    public static int[] teclado(){
+        int num[] = new int[2];
+
+        System.out.print("Digite o primeiro número: ");
+        num[0]=teclado.nextInt();
+
+        System.out.print("Digite o segundo número: ");
+        num[1] = teclado.nextInt();
+
+        return num;
+    }
+
+    public static int soma(){
+        int num[] = teclado();
+
+        int a = num[0];
+        int b = num[1];
+
+        return a+b;
+    }
+
+    public static int subtração(){
+        int num[] = teclado();
+
+        int a = num[0];
+        int b = num[1];
+
+        return a-b;
+    }
+
+    public static int multipli(){
+        int num[] = teclado();
+
+        int a = num[0];
+        int b = num[1];
+
+        return a*b;
+    }
+
+    public static int divis(){
+        int num[] = teclado();
+
+        int a = num[0];
+        int b = num[1];
+
+        return a/b;
+    }
+
+}
